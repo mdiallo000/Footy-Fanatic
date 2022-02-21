@@ -18,6 +18,13 @@ function MakeTeamContainer() {
     NewAllinputs[eventTarget] = Value;
     SetInputs(NewAllinputs);
   };
+  // ** The function above capttures the data frm my inputs
+  const dummyObject = {
+    Fullname: 'Mamadou',
+    position: 'Central Mid',
+    available: 'Yes',
+    number: 929 - 898 - 4867,
+  };
 
   return (
     <div>
@@ -50,6 +57,8 @@ function MakeTeamContainer() {
         {/* <button>Add To Team</button> */}
         <input type="submit" />
       </form>
+
+      <div className="container" style={{ marginTop: '5rem' }}></div>
     </div>
   );
 }
