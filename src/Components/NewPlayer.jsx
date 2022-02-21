@@ -7,13 +7,16 @@ import {
   ListItemText,
 } from '@mui/material';
 import { Delete, Edit } from '@mui/icons-material';
-function NewPlayer({ player }) {
+function NewPlayer({ data }) {
   return (
     <div>
       <ListItem>
         <>
           <Checkbox tabIndex={-1} />
-          <ListItemText>{player.Fullname}</ListItemText>
+          <ListItemText>{data.Fullname}</ListItemText>
+          <ListItemText>{data.position}</ListItemText>
+          <ListItemText>{data.available}</ListItemText>
+          <ListItemText>{data.cellPhone}</ListItemText>
           <ListItemSecondaryAction>
             <IconButton aria-label="Delete">
               <Delete />

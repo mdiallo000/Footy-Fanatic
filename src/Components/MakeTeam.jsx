@@ -6,17 +6,18 @@ import {
   ListItemSecondaryAction,
   ListItemText,
 } from '@mui/material';
-import { Delete, ClearAllIcon } from '@mui/icons-material';
+import { Divider, Paper, List } from '@mui/material';
+import NewPlayer from './NewPlayer';
 
-function MakeTeam() {
+function MakeTeam({ player }) {
   return (
     <div>
       <Paper>
         <List>
-          {Mytodolist.map((item) => {
+          {player.map((item) => {
             return (
               <>
-                <Todo data={item} DeleteTodo={DeleteTodo} />
+                <NewPlayer data={item} />
                 <Divider />
               </>
             );
