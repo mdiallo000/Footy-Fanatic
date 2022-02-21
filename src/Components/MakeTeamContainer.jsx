@@ -24,11 +24,26 @@ function MakeTeamContainer() {
       Fullname: 'Mamadou',
       position: 'Central Mid',
       available: 'Yes',
-      number: 929 - 898 - 4867,
+      cellPhone: '929 - 898 - 4867',
     },
   ];
   const [Info, Setinfo] = useState(dummyObject);
   console.log(dummyObject);
+  // * So i need a function which takes in all the inputs and spits and it to my Infos
+
+  const CreateNewMenber = (event) => {
+    event.preventDefault();
+    const newPlayer = [
+      ...Info,
+      {
+        Fullname: Allinputs.Fullname,
+        position: Allinputs.position,
+        available: Allinputs.available,
+        cellPhone: Allinputs.cellPhone,
+      },
+    ];
+    Setinfo(newPlayer);
+  };
 
   return (
     <div>
@@ -59,12 +74,19 @@ function MakeTeamContainer() {
           onChange={GetAllInputs}
         />
         {/* <button>Add To Team</button> */}
-        <input type="submit" />
+        <input type="submit" onClick={CreateNewMenber} />
       </form>
 
       <div className="container" style={{ marginTop: '5rem' }}>
         {Info.map((obj) => {
-          return <h1>{obj.Fullname}</h1>;
+          return (
+            <>
+              <h1>{obj.Fullname}</h1>
+              <h1>{obj.position}</h1>
+              <h1>{obj.available}</h1>
+              <h1>{obj.cellPhone}</h1>
+            </>
+          );
         })}
       </div>
     </div>
