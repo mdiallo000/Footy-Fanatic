@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import MakeTeam from './MakeTeam';
 import { v4 as uuidv4 } from 'uuid';
+import NewPlayer from './NewPlayer';
 function MakeTeamContainer() {
   //  * This function will allow us to to capture multiple inputs and store the data in an object. This will result in clean code
   const [Allinputs, SetInputs] = useState({
@@ -78,19 +79,7 @@ function MakeTeamContainer() {
         {/* <button>Add To Team</button> */}
         <input type="submit" onClick={CreateNewMenber} />
       </form>
-
-      <div className="container" style={{ marginTop: '5rem' }}>
-        {Info.map((obj) => {
-          return (
-            <>
-              <h1>{obj.Fullname}</h1>
-              <h1>{obj.position}</h1>
-              <h1>{obj.available}</h1>
-              <h1>{obj.cellPhone}</h1>
-            </>
-          );
-        })}
-      </div>
+      <MakeTeam player={Info} />
     </div>
   );
 }
