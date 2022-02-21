@@ -19,12 +19,16 @@ function MakeTeamContainer() {
     SetInputs(NewAllinputs);
   };
   // ** The function above capttures the data frm my inputs
-  const dummyObject = {
-    Fullname: 'Mamadou',
-    position: 'Central Mid',
-    available: 'Yes',
-    number: 929 - 898 - 4867,
-  };
+  const dummyObject = [
+    {
+      Fullname: 'Mamadou',
+      position: 'Central Mid',
+      available: 'Yes',
+      number: 929 - 898 - 4867,
+    },
+  ];
+  const [Info, Setinfo] = useState(dummyObject);
+  console.log(dummyObject);
 
   return (
     <div>
@@ -58,7 +62,11 @@ function MakeTeamContainer() {
         <input type="submit" />
       </form>
 
-      <div className="container" style={{ marginTop: '5rem' }}></div>
+      <div className="container" style={{ marginTop: '5rem' }}>
+        {Info.map((obj) => {
+          return <h1>{obj.Fullname}</h1>;
+        })}
+      </div>
     </div>
   );
 }
