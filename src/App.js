@@ -1,23 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import MakeTeamContainer from './Components/MakeTeamContainer';
 
 function App() {
+  // * What do i want to achieve? I want to capture inputs and display them 1. I need multiple inputs Name, Position, vailable
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MakeTeamContainer />
     </div>
   );
 }
