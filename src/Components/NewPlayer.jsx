@@ -6,8 +6,9 @@ import {
   ListItemSecondaryAction,
   ListItemText,
 } from '@mui/material';
-import { Delete, Edit } from '@mui/icons-material';
-function NewPlayer({ data }) {
+import { Delete } from '@mui/icons-material';
+function NewPlayer({ data, deletePlayer }) {
+  console.log(data.id);
   return (
     <div>
       <ListItem>
@@ -18,7 +19,12 @@ function NewPlayer({ data }) {
           <ListItemText>{data.available}</ListItemText>
           <ListItemText>{data.cellPhone}</ListItemText>
           <ListItemSecondaryAction>
-            <IconButton aria-label="Delete">
+            <IconButton
+              aria-label="Delete"
+              onClick={() => {
+                deletePlayer(data.id);
+              }}
+            >
               <Delete />
             </IconButton>
             {/* sfdsdsssssssssss */}

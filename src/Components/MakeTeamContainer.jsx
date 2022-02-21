@@ -22,16 +22,9 @@ function MakeTeamContainer() {
     SetInputs(NewAllinputs);
   };
   // ** The function above capttures the data frm my inputs
-  const dummyObject = [
-    {
-      Fullname: 'Mamadou',
-      position: 'Central Mid',
-      available: 'Yes',
-      cellPhone: '929 - 898 - 4867',
-    },
-  ];
-  const [Info, Setinfo] = useState(dummyObject);
-  console.log(dummyObject);
+
+  const [Info, Setinfo] = useState([]);
+
   // * So i need a function which takes in all the inputs and spits and it to my Infos
 
   const CreateNewMenber = (event) => {
@@ -48,13 +41,17 @@ function MakeTeamContainer() {
     ];
     Setinfo(newPlayer);
   };
-
+  // ** Function to delete a player
+  const deletePlayer = (uuID) => {
+    const deletedPlayer = Info.filter((player) => player.id !== uuID);
+    Setinfo(deletedPlayer);
+  };
   return (
     <Paper>
       {/* <MakeTeam /> */}
       <AppBar colors="primary" position="static" style={{ height: '64px' }}>
         <Toolbar>
-          <Typography color="inherit">TODO'S WITH Hooks</Typography>
+          <Typography color="inherit">Team Tracker </Typography>
         </Toolbar>
       </AppBar>
       <Grid container justifyContent="center" style={{ marginTop: '1rem' }}>
@@ -91,7 +88,7 @@ function MakeTeamContainer() {
             {/* <button>Add To Team</button> */}
             <input type="submit" onClick={CreateNewMenber} />
           </form>
-          <MakeTeam player={Info} />
+          <MakeTeam player={Info} deletePlayer={deletePlayer} />
         </Grid>
       </Grid>
     </Paper>

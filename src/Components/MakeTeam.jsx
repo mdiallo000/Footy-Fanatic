@@ -9,7 +9,7 @@ import {
 import { Divider, Paper, List } from '@mui/material';
 import NewPlayer from './NewPlayer';
 
-function MakeTeam({ player }) {
+function MakeTeam({ player, deletePlayer }) {
   return (
     <div>
       <Paper>
@@ -17,7 +17,7 @@ function MakeTeam({ player }) {
           {player.map((item) => {
             return (
               <>
-                <NewPlayer data={item} />
+                <NewPlayer data={item} deletePlayer={deletePlayer} />
                 <Divider />
               </>
             );
