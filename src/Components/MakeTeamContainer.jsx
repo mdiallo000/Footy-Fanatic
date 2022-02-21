@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import MakeTeam from './MakeTeam';
 import { v4 as uuidv4 } from 'uuid';
 import NewPlayer from './NewPlayer';
+import { Typography, Paper, AppBar, Toolbar, Grid } from '@mui/material';
 function MakeTeamContainer() {
   //  * This function will allow us to to capture multiple inputs and store the data in an object. This will result in clean code
   const [Allinputs, SetInputs] = useState({
@@ -49,38 +50,51 @@ function MakeTeamContainer() {
   };
 
   return (
-    <div>
+    <Paper>
       {/* <MakeTeam /> */}
-      <form action="">
-        <input
-          type="text"
-          name="Fullname"
-          required="required"
-          onChange={GetAllInputs}
-        />
-        <input
-          type="text"
-          name="position"
-          required="required"
-          onChange={GetAllInputs}
-        />
-        <input
-          type="text"
-          name="available"
-          required="required"
-          onChange={GetAllInputs}
-        />
-        <input
-          type="tel"
-          name="cellPhone"
-          required="required"
-          onChange={GetAllInputs}
-        />
-        {/* <button>Add To Team</button> */}
-        <input type="submit" onClick={CreateNewMenber} />
-      </form>
-      <MakeTeam player={Info} />
-    </div>
+      <AppBar colors="primary" position="static" style={{ height: '64px' }}>
+        <Toolbar>
+          <Typography color="inherit">TODO'S WITH Hooks</Typography>
+        </Toolbar>
+      </AppBar>
+      <Grid container justifyContent="center" style={{ marginTop: '1rem' }}>
+        <Grid item xs={11} md={8} lg={4}>
+          <form action="">
+            <input
+              type="text"
+              name="Fullname"
+              required="required"
+              onChange={GetAllInputs}
+              placeholder="name...smith"
+            />
+            <input
+              type="text"
+              name="position"
+              required="required"
+              onChange={GetAllInputs}
+              placeholder="position..."
+            />
+            <input
+              type="text"
+              name="available"
+              required="required"
+              onChange={GetAllInputs}
+              placeholder="availability"
+            />
+            <input
+              type="tel"
+              name="cellPhone"
+              required="required"
+              onChange={GetAllInputs}
+              placeholder="cell 999-888.."
+            />
+            {/* <button>Add To Team</button> */}
+            <input type="submit" onClick={CreateNewMenber} />
+          </form>
+          <MakeTeam player={Info} />
+        </Grid>
+      </Grid>
+    </Paper>
   );
 }
 

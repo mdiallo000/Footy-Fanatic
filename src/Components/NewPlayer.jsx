@@ -23,9 +23,9 @@ function NewPlayer({ data }) {
             </IconButton>
             {/* sfdsdsssssssssss */}
 
-            <IconButton aria-label="Edit">
+            {/* <IconButton aria-label="Edit">
               <Edit />
-            </IconButton>
+            </IconButton> */}
           </ListItemSecondaryAction>
         </>
       </ListItem>
