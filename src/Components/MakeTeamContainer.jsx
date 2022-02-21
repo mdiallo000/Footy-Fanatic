@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import MakeTeam from './MakeTeam';
+import { v4 as uuidv4 } from 'uuid';
 function MakeTeamContainer() {
   //  * This function will allow us to to capture multiple inputs and store the data in an object. This will result in clean code
   const [Allinputs, SetInputs] = useState({
@@ -36,6 +37,7 @@ function MakeTeamContainer() {
     const newPlayer = [
       ...Info,
       {
+        id: uuidv4(),
         Fullname: Allinputs.Fullname,
         position: Allinputs.position,
         available: Allinputs.available,
